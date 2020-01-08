@@ -17,7 +17,6 @@ export default {
   },
   methods: {
     handleClick(title) {
-      console.log('title clicked', title);
       this.$emit('titleClicked', title);
     },
   },
