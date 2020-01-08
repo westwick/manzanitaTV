@@ -1,25 +1,28 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h2>My List</h2>
     <div class="my-list">
-      <div class="title" v-for="title in myList" :key="title.id">
-        <img :src="title.img" />
-        <p>{{title.title}}</p>
-      </div>
+      <Title v-for="title in myList"
+        :key="title.id"
+        :title="title.title"
+        :image="title.img"
+      >
+      </Title>
     </div>
     <h2>Recommendations</h2>
     <div class="recommendations">
-      <div class="title" v-for="title in recommendations" :key="title.id">
-        <img :src="title.img" />
-        <p>{{title.title}}</p>
-      </div>
+      <Title v-for="title in myList"
+        :key="title.id"
+        :title="title.title"
+        :image="title.img"
+      >
+      </Title>
     </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Title from './components/Title.vue';
 import mockdata from './data/mockdata.json';
 
 export default {
@@ -31,7 +34,7 @@ export default {
     };
   },
   components: {
-    HelloWorld,
+    Title,
   },
 };
 </script>
@@ -49,11 +52,5 @@ body {
 }
 .my-list, .recommendations {
   display: flex;
-}
-
-.title {
-  display: flex;
-  flex-direction: column;
-  margin-right: 32px;
 }
 </style>
